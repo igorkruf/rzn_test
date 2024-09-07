@@ -1,0 +1,10 @@
+{% extends "board/base.html" %}
+{% load calendar_tag %}
+{% block content %}
+    <h1>Календарь</h1>
+    Текущая дата:{{curent_date}}
+    {% autoescape off %}
+        {{ calendar }}
+        {% comment %} {% show_calendar_of_curent_month curent_date %} {% endcomment %}
+    {% endautoescape %}
+{% endblock content %}

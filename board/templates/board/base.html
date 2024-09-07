@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}
+    Главная страница
+    {% endblock title %}</title>
+    <script src="{% static 'board/assets/scripts_styles/bootstrap.bundle.js' %}"></script>
+    <script src="{% static 'board/assets/scripts_styles/custom.js' %}" defer></script>
+    <!-- <link rel="stylesheet" href="{% static 'board/assets/scripts_styles/bootstrap.css' %}"/> -->
+    <link rel="stylesheet" href="{% static 'board/assets/scripts_styles/custom.css' %}"/>
+</head>
+<body>
+    <a href="{% url 'board:my_view' %}">Кликни</a>
+    {% comment %} {% include 'board/genres.html' %} {% endcomment %}
+    {% block content %}
+    <h1>Контент главной страницы</h1>
+    <div class="div-root">
+        <div class="div-in-line div-root__flex-elem">
+            <div class="">fdghdfghdfghdfghdfghdfgd fsdfsdfsdfsdfsdfsdf dghdfghdfghdfghdfghdfgd fsdfsdfsdfsdfsdfsdf dghdfghdfghdfghdfghdfgd fsdfsdfsdfsdfsdfsdf  </div>
+            <div class="div-in-line__flex-box">
+                <div class="div-in-line__flex-elem"></div>
+            </div>
+        </div>
+        <div class="div-in-column div-root__flex-elem">
+            <div class="div-in-column__flex-elem"> f</div>
+            <div class="div-in-column__flex-elem">
+                <div class="div-in-line sss">
+                    <div class="this">dd</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+    <div class="modal__wrapper  ">
+        <div class="modal">
+            <div class="modal__header">
+                <div class="modal__title">Заголовок модалки</div>
+                <div class="modal__close">Зарыть</div>
+            </div>
+            <div class="modal__content">
+                content 
+                <span class="open-sub-modal">Открыть подмодалку</span>
+            </div>
+        </div>
+    </div>
+    <template id="template-sub-modal">
+        <div class="modal__wrapper modal__wrapper_visible sub-modal__wrapper">
+            <div class="modal sub-modal">
+                <div class="modal__header ">
+                    <div class="modal__title">Заголовок под модалки</div>
+                    <div class="modal__close ">Зарыть под модалку</div>
+                </div>
+                <div class="modal__content sub-modal__content">
+                    content под модалки
+                </div>
+            </div>
+        </div>
+    </template>
+</body>
+</html>
